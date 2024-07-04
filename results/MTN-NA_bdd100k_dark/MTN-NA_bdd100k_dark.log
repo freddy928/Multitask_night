@@ -1,0 +1,93 @@
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  COLOR_RGB: False
+  DATAROOT: F:\dataset\bdd100k_dark\images
+  DATASET: BddDataset
+  DATA_FORMAT: jpg
+  FLIP: True
+  HSV_H: 0.015
+  HSV_S: 0.7
+  HSV_V: 0.4
+  LABELROOT: F:\dataset\bdd100k_dark\det_gt
+  LANEROOT: F:\dataset\bdd100k_dark\lane_gt
+  MASKROOT: F:\dataset\bdd100k_dark\da_gt
+  ORG_IMG_SIZE: [720, 1280]
+  ROT_FACTOR: 10
+  SCALE_FACTOR: 0.25
+  SELECT_DATA: False
+  SHEAR: 0.0
+  TEST_SET: val_part
+  TRAIN_SET: train
+  TRANSLATE: 0.1
+DEBUG: False
+GPUS: (0,)
+LOG_DIR: runs/
+LOSS:
+  BOX_GAIN: 0.05
+  CLS_GAIN: 0.5
+  CLS_POS_WEIGHT: 1.0
+  DA_SEG_GAIN: 0.2
+  FL_GAMMA: 0.0
+  LL_IOU_GAIN: 0.2
+  LL_SEG_GAIN: 0.2
+  LOSS_NAME: 
+  MULTI_HEAD_LAMBDA: None
+  OBJ_GAIN: 1.0
+  OBJ_POS_WEIGHT: 1.0
+  SEG_POS_WEIGHT: 1.0
+MODEL:
+  EXTRA:
+    
+  HEADS_NAME: ['']
+  IMAGE_SIZE: [640, 640]
+  NAME: 
+  PRETRAINED: 
+  PRETRAINED_DET: 
+  STRU_WITHSHARE: False
+NEED_AUTOANCHOR: False
+PIN_MEMORY: False
+PRINT_FREQ: 480
+TEST:
+  BATCH_SIZE_PER_GPU: 12
+  MODEL_FILE: 
+  NMS_CONF_THRESHOLD: 0.001
+  NMS_IOU_THRESHOLD: 0.6
+  PLOTS: True
+  SAVE_JSON: False
+  SAVE_TXT: False
+TRAIN:
+  ANCHOR_THRESHOLD: 4.0
+  BATCH_SIZE_PER_GPU: 6
+  BEGIN_EPOCH: 0
+  DET_ONLY: False
+  DRIVABLE_ONLY: False
+  ENC_DET_ONLY: False
+  ENC_SEG_ONLY: False
+  END_EPOCH: 60
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  IOU_THRESHOLD: 0.2
+  LANE_ONLY: False
+  LR0: 0.0001
+  LRF: 0.1
+  MOMENTUM: 0.937
+  NESTEROV: True
+  OPTIMIZER: adam
+  PLOT: True
+  SEG_ONLY: False
+  SHUFFLE: True
+  VAL_FREQ: 1
+  WARMUP_BIASE_LR: 0.1
+  WARMUP_EPOCHS: 3.0
+  WARMUP_MOMENTUM: 0.8
+  WD: 0.0005
+WORKERS: 0
+num_seg_class: 2
+Test:    Loss(0.504)
+Driving area Segment: Acc(0.972)    IOU (0.856)    mIOU(0.913)
+Lane line Segment: Acc(0.673)    IOU (0.262)  mIOU(0.622)
+Detect: P(0.071)  R(0.896)  mAP@0.5(0.731)  mAP@0.5:0.95(0.387)
+Time: inference(0.1213s/frame)  nms(0.0009s/frame)
